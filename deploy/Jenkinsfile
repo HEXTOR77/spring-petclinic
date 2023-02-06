@@ -51,7 +51,7 @@ pipeline {
                 execCommand: '''
                 cd /home/ubuntu 
                 sudo rm -rf * 
-                && mkdir deploy 
+                && mkdir deploy '''
                 execTimeout: 120000,
                 flatten: false,
                 makeEmptyDirs: false, 
