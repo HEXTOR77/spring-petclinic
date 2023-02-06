@@ -46,6 +46,7 @@ pipeline {
         stage('Target CD') {
             steps {
                 echo 'Target CD'
+                sh 'cd /home/ubuntu && sudo rm -rf * && mkdir deploy'
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'target',
                 transfers: [sshTransfer(cleanRemote: false, excludes: '',
                 execCommand: '''fuser -k 8080/tcp 
